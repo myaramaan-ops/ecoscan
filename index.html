@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoScan | A Greener Tomorrow</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+--green:#16a34a;--dark:#123524;--light:#f0fdf4;
+--text:#18352a;--muted:#64776b;--white:#fff
+}
+body{font-family:Arial,sans-serif;background:#f7faf7;color:var(--text)}
+header{padding:18px 7%;display:flex;justify-content:space-between;
+align-items:center;background:white;border-bottom:1px solid #e3eee5}
+.logo{font-size:24px;font-weight:800;color:var(--green)}
+.logo span{color:var(--dark)}
+nav a{color:var(--text);text-decoration:none;margin-left:18px;font-size:14px}
+.hero{padding:65px 7%;background:linear-gradient(130deg,#e7f9ec,#fff);
+display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center}
+.badge{display:inline-block;background:#d9fbe2;color:#147b38;
+padding:8px 13px;border-radius:30px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.08;
+margin:20px 0;color:var(--dark)}
+h1 span{color:var(--green)}
+.hero p{line-height:1.8;color:var(--muted);max-width:480px}
+.button{display:inline-block;border:0;border-radius:10px;padding:13px 20px;
+background:var(--green);color:white;font-weight:bold;cursor:pointer;
+text-decoration:none;margin-top:22px}
+.eco-art{background:white;border:1px solid #e1eee3;border-radius:25px;
+padding:30px;text-align:center;box-shadow:0 15px 40px #164c2210}
+.planet{font-size:100px;margin:15px}
+.eco-art h3{font-size:22px;color:var(--dark);margin-bottom:10px}
+.emoji-row{font-size:28px;letter-spacing:12px;margin-top:20px}
+section.content{padding:50px 7%}
+.section-title{text-align:center;font-size:30px;color:var(--dark);margin-bottom:12px}
+.section-sub{text-align:center;color:var(--muted);line-height:1.7;margin-bottom:30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:35px}
+.stat,.card{background:white;border:1px solid #e5eee6;border-radius:16px;padding:23px}
+.stat strong{font-size:30px;color:var(--green);display:block;margin:10px 0}
+.stat small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card .icon{font-size:32px;margin-bottom:15px}
+.card h3{margin-bottom:10px;color:var(--dark)}
+.card p{font-size:14px;line-height:1.7;color:var(--muted)}
+.card button{margin-top:15px;border:0;background:#e6f8eb;color:#167b38;
+padding:10px 13px;border-radius:8px;cursor:pointer;font-weight:bold}
+.scanner{max-width:680px;margin:auto;background:white;border:1px solid #e0ece2;
+border-radius:20px;padding:25px}
+.upload{border:2px dashed #a5d9b1;border-radius:15px;text-align:center;
+padding:30px 15px;background:#f7fdf8}
+.upload label{display:inline-block;background:var(--green);color:white;
+padding:12px 18px;border-radius:9px;cursor:pointer;margin:15px}
+input[type=file]{display:none}
+#preview{display:none;max-width:100%;max-height:260px;margin:20px auto;
+border-radius:12px}
+#message{margin-top:15px;line-height:1.7;color:var(--muted)}
+.eco-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.eco-actions button{flex:1;min-width:150px;padding:14px;border:0;
+border-radius:10px;background:#e4f8e9;color:#176c35;font-weight:bold;cursor:pointer}
+.eco-actions button:disabled{opacity:.5;cursor:default}
+footer{padding:30px 7%;background:var(--dark);color:white;text-align:center}
+footer p{font-size:13px;line-height:1.8;color:#c5ddcb;margin-top:10px}
+@media(max-width:700px){
+nav a{margin-left:8px;font-size:12px}
+.hero{grid-template-columns:1fr;padding-top:45px}
+.stats{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+section.content{padding:40px 5%}
+header{padding:16px 5%}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">♻ Eco<span>Scan</span></div>
+  <nav>
+    <a href="#guide">Waste Guide</a>
+    <a href="#scanner">Scanner</a>
+    <a href="#impact">EcoScore</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <span class="badge">🌍 SMALL ACTIONS. BIG IMPACT.</span>
+    <h1>Waste less.<br>Live <span>greener.</span></h1>
+    <p>Discover the right way to dispose of everyday waste.
+    Make informed choices and take a step toward a cleaner planet.</p>
+    <a class="button" href="#scanner">Explore EcoScan →</a>
+  </div>
+  <div class="eco-art">
+    <div class="planet">🌎</div>
+    <h3>A cleaner future starts with you.</h3>
+    <p>Learn. Sort. Recycle. Repeat.</p>
+    <div class="emoji-row">🌱 ♻️ 🌿</div>
+  </div>
+</section>
+
+<section class="content" id="impact">
+  <h2 class="section-title">Your Eco Dashboard</h2>
+  <p class="section-sub">Every responsible choice is a step forward.</p>
+  <div class="stats">
+    <div class="stat">🌱<strong id="points">0</strong><small>EcoPoints earned</small></div>
+    <div class="stat">♻️<strong id="actions">0</strong><small>Eco actions completed</small></div>
+    <div class="stat">📸<strong id="uploads">0</strong><small>Photos previewed</small></div>
+  </div>
+  <div class="card">
+    <h3>🏆 Daily Eco Challenge</h3>
+    <p>Identify a waste item and learn how to dispose of it responsibly.</p>
+    <div class="eco-actions">
+      <button id="challenge" onclick="completeChallenge()">Complete challenge (+10 points)</button>
+      <button onclick="resetProgress()">Reset demo progress</button>
+    </div>
+  </div>
+</section>
+
+<section class="content" id="guide">
+  <h2 class="section-title">Smart Waste Guide</h2>
+  <p class="section-sub">Choose a category to learn how to manage your waste.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🍌</div><h3>Wet & Organic Waste</h3>
+      <p>Examples: fruit peels, vegetable scraps and food leftovers.</p>
+      <button onclick="showGuide('wet')">Disposal tips →</button>
+    </div>
+    <div class="card">
+      <div class="icon">📦</div><h3>Dry & Recyclable Waste</h3>
+      <p>Examples: clean paper, cardboard, metal cans and accepted plastics.</p>
+      <button onclick="showGuide('dry')">Disposal tips →</button>
+    </div>
+    <div class="card">
+      <div class="icon">🔋</div><h3>E-Waste</h3>
+      <p>Examples: old phones, batteries, chargers and broken electronics.</p>
+      <button onclick="showGuide('electronic')">Disposal tips →</button>
+    </div>
+  </div>
+  <div class="card" id="guideResult" style="display:none;margin-top:18px">
+    <h3 id="guideTitle"></h3><p id="guideText"></p>
+  </div>
+</section>
+
+<section class="content" id="scanner">
+  <h2 class="section-title">Waste Photo Scanner</h2>
+  <p class="section-sub">Upload a photo to preview an item before choosing its category.</p>
+  <div class="scanner">
+    <div class="upload">
+      <div style="font-size:45px">📷</div>
+      <h3>Upload a waste photo</h3>
+      <p style="color:#64776b;margin-top:8px">Choose an image from your device.</p>
+      <label for="photo">Choose Photo</label>
+      <input type="file" id="photo" accept="image/*">
+      <img id="preview" alt="Your selected waste photo">
+      <div id="message">No photo selected yet.</div>
+    </div>
+    <h3 style="margin-top:25px">What type of waste is it?</h3>
+    <p style="font-size:14px;color:#64776b;margin-top:8px">
+    Select the category yourself. This demo does not automatically identify waste.</p>
+    <div class="eco-actions">
+      <button onclick="recordItem('wet')">🍌 Organic</button>
+      <button onclick="recordItem('dry')">📦 Dry waste</button>
+      <button onclick="recordItem('electronic')">🔋 E-waste</button>
+    </div>
+    <div id="result" style="margin-top:20px;line-height:1.8"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="logo" style="color:#86efac">♻ EcoScan</div>
+  <p>Making responsible waste management easier, one choice at a time.</p>
+  <p>Student startup demonstration · Educational purposes</p>
+</footer>
+
+<script>
+let points = Number(localStorage.getItem('ecoPoints') || 0);
+let actions = Number(localStorage.getItem('ecoActions') || 0);
+let uploads = Number(localStorage.getItem('ecoUploads') || 0);
+let challengeDone = localStorage.getItem('ecoChallenge') === 'yes';
+
+function updateDashboard(){
+ document.getElementById('points').textContent=points;
+ document.getElementById('actions').textContent=actions;
+ document.getElementById('uploads').textContent=uploads;
+ document.getElementById('challenge').disabled=challengeDone;
+ document.getElementById('challenge').textContent=challengeDone?
+ 'Challenge completed ✓':'Complete challenge (+10 points)';
+ localStorage.setItem('ecoPoints',points);
+ localStorage.setItem('ecoActions',actions);
+ localStorage.setItem('ecoUploads',uploads);
+}
+function completeChallenge(){
+ if(challengeDone)return;
+ points+=10;actions++;challengeDone=true;
+ localStorage.setItem('ecoChallenge','yes');
+ updateDashboard();
+}
+function resetProgress(){
+ points=0;actions=0;uploads=0;challengeDone=false;
+ localStorage.removeItem('ecoChallenge');
+ updateDashboard();
+ document.getElementById('result').textContent='';
+}
+const guides={
+ wet:['Wet & Organic Waste',
+ 'Keep organic waste separate. Where appropriate, compost fruit peels and vegetable scraps. Follow your local waste collection rules.'],
+ dry:['Dry & Recyclable Waste',
+ 'Keep recyclable materials clean and dry. Separate paper, cardboard, metal and plastics according to your local recycling service. Not every plastic is recyclable everywhere.'],
+ electronic:['Electronic Waste',
+ 'Never put batteries or electronic devices in ordinary recycling bins unless local rules explicitly allow it. Use an authorised e-waste collection centre or take-back programme.']
+};
+function showGuide(type){
+ document.getElementById('guideResult').style.display='block';
+ document.getElementById('guideTitle').textContent=guides[type][0];
+ document.getElementById('guideText').textContent=guides[type][1];
+ document.getElementById('guideResult').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+document.getElementById('photo').addEventListener('change',function(e){
+ const file=e.target.files[0];
+ if(!file)return;
+ if(!file.type.startsWith('image/')){
+  document.getElementById('message').textContent='Please select an image.';
+  return;
+ }
+ if(file.size>8*1024*1024){
+  document.getElementById('message').textContent='Please choose an image smaller than 8 MB.';
+  return;
+ }
+ const reader=new FileReader();
+ reader.onload=function(event){
+  document.getElementById('preview').src=event.target.result;
+  document.getElementById('preview').style.display='block';
+  document.getElementById('message').textContent='Photo loaded successfully! Select a category below.';
+  uploads++;updateDashboard();
+ };
+ reader.readAsDataURL(file);
+});
+function recordItem(type){
+ const guide=guides[type];
+ actions++;points+=5;updateDashboard();
+ document.getElementById('result').innerHTML='';
+ const heading=document.createElement('h3');
+ heading.textContent='Selected category: '+guide[0];
+ const description=document.createElement('p');
+ description.textContent=guide[1];
+ description.style.marginTop='10px';
+ const notice=document.createElement('p');
+ notice.textContent='+5 EcoPoints! This is a user-selected category, not an AI prediction.';
+ notice.style.color='#16803d';
+ notice.style.marginTop='10px';
+ document.getElementById('result').append(heading,description,notice);
+}
+updateDashboard();
+</script>
+</body>
+</html>
